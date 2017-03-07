@@ -126,6 +126,7 @@ endif;
 function acelin_front_page_section( $id = 0 ) {
 
 	global $post; // Modify the global post object before setting up post data.
+	
 	if ( get_theme_mod( 'acelin_fp_section_' . $id ) ) {
 		
 		global $post;
@@ -137,12 +138,6 @@ function acelin_front_page_section( $id = 0 ) {
 
 		wp_reset_postdata();
 
-	} elseif ( is_customize_preview() ) {
-		// The output placeholder anchor.
-		printf( '<article class="front-page-section-placeholder" id="front-page-section-%1$s">%2$s</article>',
-			$id,
-			sprintf( __( 'Front Page Section %1$s Placeholder', 'acelin' ), $id )
-		);
 	}
 
 }

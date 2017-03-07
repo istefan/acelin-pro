@@ -31,10 +31,9 @@ get_header(); ?>
 		<main id="main" class="front-page-sections" role="main">
 
 		<?php
-		$front_page_sections = get_theme_mod( 'acelin_fp_sections', 4 );
 		global $frontpagecounter;
 
-		for ( $i = 1; $i < $front_page_sections + 1; $i++ ) {
+		for ( $i = 1; $i < 11; $i++ ) {
 
 			$frontpagecounter = $i;
 			acelin_front_page_section( $i );

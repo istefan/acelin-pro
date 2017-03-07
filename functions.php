@@ -25,6 +25,7 @@ function acelin_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'featured-image', 2000, 1200, true );
+	add_image_size( 'portfolio-thumbnail', 1100, 770, true );
 	add_image_size( 'post-thumbnail', 1100, 400, true );
 
 	// Enable support for custom logo.

@@ -32,38 +32,15 @@ $options[] = array( 'title'             => __( 'Theme Options', 'acelin' ),
 
 // Front Page - Section
 $options[] = array( 'title'             => __( 'Front Page', 'acelin' ),
-                    'description'       => '',
+                    'description'       => __( 'Each section will be populated with the content of the selected page.', 'acelin' ),
                     'panel'             => 'acelin_theme_options',
                     'id'                => 'acelin_fp_options',
                     'priority'          => 10,
                     'theme_supports'    => '',
                     'type'              => 'section' );
 
-// Front Page Sections
-$options[] = array( 'title'             => __( 'Number of Front Page Sections', 'acelin' ),
-                    'description'       => __( 'Each section will be populated with the content of the selected page.', 'acelin' ),
-                    'section'           => 'acelin_fp_options',
-                    'id'                => 'acelin_fp_sections',
-                    'default'           => '4',
-                    'option'            => 'select',
-                    'sanitize_callback' => '',
-                    'choices'           => array(
-                        '1' => __( '1 Section', 'acelin' ),
-                        '2' => __( '2 Sections', 'acelin' ),
-                        '3' => __( '3 Sections', 'acelin' ),
-                        '4' => __( '4 Sections', 'acelin' ),
-                        '5' => __( '5 Sections', 'acelin' ),
-                        '6' => __( '6 Sections', 'acelin' ),
-                        '7' => __( '7 Sections', 'acelin' ),
-                        '8' => __( '8 Sections', 'acelin' ),
-                        '9' => __( '9 Sections', 'acelin' ),
-                        '10' => __( '10 Sections', 'acelin' ),
-                    ),
-                    'type'              => 'control' );
-
 // Front Page Section Pages
-$front_page_sections = get_theme_mod( 'acelin_fp_sections', 4 );
-for ( $i = 1; $i < $front_page_sections + 1; $i++ ) { 
+for ( $i = 1; $i < 11; $i++ ) { 
 
     $options[] = array( 'title'             => __( 'Front Page Section', 'acelin' ) . ' ' . $i,
                         'description'       => '',
