@@ -1,0 +1,61 @@
+.site-header {
+	padding: 			15px 0;
+	background-color: 	#ffffff;
+	width: 				$site-width-mobile;
+	position: 			fixed;
+	z-index: 			9999;
+	border-bottom: 		1px solid $gray-lightest;
+}
+
+@media (min-width: $small-screen) {
+	.site-header {
+		width: 			$site-width-small;
+	}
+}
+
+@media (min-width: $medium-screen) {
+	.site-header {
+		width: 			$site-width-medium;
+	}
+}
+
+@media (min-width: $large-screen) {
+	.site-header {
+		width: 			$site-width-large;
+	}
+}
+
+.site-content {
+	margin-top: 		90px;
+}
+
+.site-branding {
+	float: 				left;
+}
+
+.site-title {
+	font-family: 		"Lato", Helvetica, Arial, sans-serif;
+	@include 			font-size(28);
+	font-weight: 		700;
+	letter-spacing: 	1px;
+	margin: 			0;
+	line-height: 		60px;
+}
+
+.site-title a,
+.site-title a:hover {
+	color: 				$heading-font-color;
+	text-decoration: 	none;
+}
+
+.wp-custom-logo .site-title,
+.site-description {
+	display: 			none;
+	visibility: 		hidden;
+}
+
+.custom-logo {
+	height: 			60px;
+	max-height: 		60px;
+	width: 				auto;
+}
