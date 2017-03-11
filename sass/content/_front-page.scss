@@ -1,4 +1,4 @@
-body.page-template-page-front {
+body.page-template-template-front-page {
 
 	.hentry {
 		border-bottom: 				none;
@@ -39,21 +39,11 @@ body.page-template-page-front {
 		}
 	}
 
-	.front-page-section-placeholder {
-		text-align: 				center;
-		color: 						#999;
-		text-transform: 			uppercase;
-		padding: 					50px 0;
-		margin: 					10px 0;
-		border-top: 				dashed #eee;
-		border-bottom: 				dashed #eee;
-	}
-
 }
 
 
 @media (min-width: $medium-screen) {
-	body.page-template-page-front {
+	body.page-template-template-front-page {
 
 		.front-page-section {
 			padding-top: 				100px;

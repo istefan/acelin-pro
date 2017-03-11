@@ -1,8 +1,9 @@
 <?php
 /**
- * Template Name: No Sidebar
+ * Template Name: Full Width
+ * Template Post Type: post, page
  *
- * Custom No Sidebar Template.
+ * Custom Full Width Template.
  *
  * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/page-templates/
  *
@@ -17,7 +18,8 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				$content_type = ( 'post' === get_post_type() ) ? 'single' : 'page';
+				get_template_part( 'template-parts/content', $content_type );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :

@@ -214,55 +214,6 @@ endif;
 
 
 /**
- * Default Portfolio posts / page.
- */
-function acelin_portfolio_query( $query ){
-    if( ! is_admin()
-        && $query->is_post_type_archive( 'portfolio' )
-        && $query->is_main_query() ){
-            $query->set( 'posts_per_page', get_theme_mod( 'acelin_portfolio_posts', '12' ) );
-    }
-}
-add_action( 'pre_get_posts', 'acelin_portfolio_query' );
-
-
-/**
- * Echo header scripts in to wp_head().
- */
-function acelin_header_scripts() {
-	global $post;
-
-	echo html_entity_decode( apply_filters( 'acelin_header_scripts', get_theme_mod( 'acelin_header_scripts' ) ) );
-
-	// If singular, echo scripts from custom field
-	if ( is_singular() )
-		echo html_entity_decode( get_post_meta( $post->ID, '_acelin_scripts', true ) );
-
-}
-add_action( 'wp_head', 'acelin_header_scripts' );
-add_filter( 'acelin_header_scripts', 'do_shortcode' );
-
- 
-/**
- * Echo the footer scripts.
- */
-function acelin_footer_scripts() {
-	echo html_entity_decode( apply_filters( 'acelin_footer_scripts', get_theme_mod( 'acelin_footer_scripts' ) ) );
-}
-add_action( 'wp_footer', 'acelin_footer_scripts' );
-add_filter( 'acelin_footer_scripts', 'do_shortcode' );
-
-
-/**
- * Display 12 products per page - WooCommerce
- */
-function acelin_woocommerce_products_per_page() {
-	return 12;
-}
-add_filter( 'loop_shop_per_page', 'acelin_woocommerce_products_per_page', 20 );
-
-
-/**
  * Customizer Class.
  */
 require get_template_directory() . '/inc/customizer-class.php';
