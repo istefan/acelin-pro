@@ -1,12 +1,44 @@
 <?php
 /**
- * Customizer Control Examples.
+ * Customizer Controls.
  *
- * @package Acelin
+ * @package WPshed Customizer Framework
  */
 
+// User access level
+$capability = 'edit_theme_options';
+
+// Option type
+$type = 'theme_mod'; // option / theme_mod
+
 /* ---------------------------------------------------------------------------------------------------
-    Examples
+    Panels
+--------------------------------------------------------------------------------------------------- */
+
+// Panel
+$options[] = array( 'title'             => __( 'Theme Options', 'acelin' ),
+                    'description'       => '',
+                    'id'                => 'acelin_theme_options',
+                    'priority'          => 10,
+                    'theme_supports'    => '',
+                    'type'              => 'panel' );
+
+
+/* ---------------------------------------------------------------------------------------------------
+    Sections
+--------------------------------------------------------------------------------------------------- */
+
+// Section
+$options[] = array( 'title'             => __( 'Test Section', 'acelin' ),
+                    'description'       => __( 'Section description', 'acelin' ),
+                    'panel'             => 'acelin_theme_options',
+                    'id'                => 'acelin_section_id',
+                    'priority'          => 10,
+                    'theme_supports'    => '',
+                    'type'              => 'section' );
+
+/* ---------------------------------------------------------------------------------------------------
+    Controls
 --------------------------------------------------------------------------------------------------- */
 
 // Text
@@ -99,11 +131,10 @@ $options[] = array( 'title'             => __( 'File Upload Field', 'acelin' ),
                     'sanitize_callback' => '',
                     'type'              => 'control' );
 
-
 // URL
 $options[] = array( 'title'             => __( 'URL Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_2',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_url',
                     'default'           => '',
                     'option'            => 'url',
@@ -113,7 +144,7 @@ $options[] = array( 'title'             => __( 'URL Field', 'acelin' ),
 // Email
 $options[] = array( 'title'             => __( 'Email Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_2',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_email',
                     'default'           => '',
                     'option'            => 'email',
@@ -123,7 +154,7 @@ $options[] = array( 'title'             => __( 'Email Field', 'acelin' ),
 // Password
 $options[] = array( 'title'             => __( 'Password Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_2',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_password',
                     'default'           => '',
                     'option'            => 'password',
@@ -133,7 +164,7 @@ $options[] = array( 'title'             => __( 'Password Field', 'acelin' ),
 // number
 $options[] = array( 'title'             => __( 'number Field (px)', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_2',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_number',
                     'default'           => 70,
                     'option'            => 'number',
@@ -149,7 +180,7 @@ $options[] = array( 'title'             => __( 'number Field (px)', 'acelin' ),
 // Pages
 $options[] = array( 'title'             => __( 'Pages Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_pages',
                     'default'           => 0,
                     'option'            => 'pages',
@@ -159,7 +190,7 @@ $options[] = array( 'title'             => __( 'Pages Field', 'acelin' ),
 // Categories
 $options[] = array( 'title'             => __( 'Categories Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_categories',
                     'default'           => 0,
                     'option'            => 'categories',
@@ -169,7 +200,7 @@ $options[] = array( 'title'             => __( 'Categories Field', 'acelin' ),
 // Tags
 $options[] = array( 'title'             => __( 'Tags Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_tags',
                     'default'           => '',
                     'option'            => 'tags',
@@ -179,7 +210,7 @@ $options[] = array( 'title'             => __( 'Tags Field', 'acelin' ),
 // Post Types
 $options[] = array( 'title'             => __( 'Post Types Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_post_types',
                     'default'           => '',
                     'option'            => 'post_types',
@@ -189,7 +220,7 @@ $options[] = array( 'title'             => __( 'Post Types Field', 'acelin' ),
 // Posts
 $options[] = array( 'title'             => __( 'Posts Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_posts',
                     'default'           => '',
                     'option'            => 'posts',
@@ -199,7 +230,7 @@ $options[] = array( 'title'             => __( 'Posts Field', 'acelin' ),
 // Users
 $options[] = array( 'title'             => __( 'Users Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_users',
                     'default'           => '',
                     'option'            => 'users',
@@ -209,12 +240,10 @@ $options[] = array( 'title'             => __( 'Users Field', 'acelin' ),
 // Menus
 $options[] = array( 'title'             => __( 'Menus Field', 'acelin' ),
                     'description'       => '',
-                    'section'           => 'acelin_section_3',
+                    'section'           => 'acelin_section_id',
                     'id'                => 'acelin_menus',
                     'default'           => '',
                     'option'            => 'menus',
                     'sanitize_callback' => '',
                     'type'              => 'control' );
-
-
-             
+          
